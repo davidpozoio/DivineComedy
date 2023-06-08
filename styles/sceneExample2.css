@@ -1,6 +1,1 @@
-*{
-    color: aquamarine;
-}
-body{
-    background-color:  yellow;
-}
+@import url("./sceneExample.css");

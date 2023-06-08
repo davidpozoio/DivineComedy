@@ -1,6 +1,36 @@
 *{
-    color: yellow;
+    margin: 0;
 }
-.game{
-    background-color: black;
+
+.scene{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.scene__description{
+    color: white;
+    font-size: 3rem;
+    text-shadow: 3px 2px black;
+}
+
+.scene__img{
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+}
+
+.decisions__button{
+    width: 300px;
+    height: 50px;
+
+    background-color: rgba(0, 0, 0, 0.61);
+    border-radius: 25px;
+
+    color: white;
 }

@@ -13,6 +13,7 @@ function getAllDecisions(decisions) {
     let $button = document.createElement("button");
     $button.id = decision.next;
     $button.textContent = decision.description;
+    $button.className = "decisions__button";
     $decisionsFragment.appendChild($button);
   }
 
