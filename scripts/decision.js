@@ -1,17 +1,20 @@
+export function loadDecisions(decisions, sceneDom) {
+  const { $decisionsContainer } = sceneDom;
 
-export function loadDecisions(decisions, sceneDom){
-    const {$decisionsContainer} = sceneDom;
-    
-    $decisionsContainer.innerHTML = "";
+  $decisionsContainer.innerHTML = "";
 
-    let $decisionsFragment = document.createDocumentFragment();
+  $decisionsContainer.appendChild(getAllDecisions(decisions));
+}
 
-    for(let decision of decisions){
-        let $button = document.createElement('button');
-        $button.id = decision.next;
-        $button.textContent = decision.description;  
-        $decisionsFragment.appendChild($button);
-    }
+function getAllDecisions(decisions) {
+  let $decisionsFragment = document.createDocumentFragment();
 
-    $decisionsContainer.appendChild($decisionsFragment);
+  for (let decision of decisions) {
+    let $button = document.createElement("button");
+    $button.id = decision.next;
+    $button.textContent = decision.description;
+    $decisionsFragment.appendChild($button);
+  }
+
+  return $decisionsFragment;
 }
