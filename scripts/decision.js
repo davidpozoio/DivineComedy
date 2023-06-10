@@ -11,9 +11,13 @@ function getAllDecisions(decisions) {
 
   for (let decision of decisions) {
     let $button = document.createElement("button");
-    $button.id = decision.next;
+
+    if(decision.hasOwnProperty('next')) $button.id = decision.next;
+    if(decision.hasOwnProperty('type')) $button.dataset.type = decision.type;
+ 
     $button.textContent = decision.description;
     $button.className = "decisions__button";
+    
     $decisionsFragment.appendChild($button);
   }
 

@@ -1,6 +1,8 @@
 export const $game = document.querySelector(".game");
 export const health = {
   lifePoints: 3,
+  minLife: 0,
+  maxLife: 3,
   damage: 1,
   heal: 1
 }

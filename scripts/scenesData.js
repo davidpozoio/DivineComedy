@@ -4,8 +4,8 @@ export const scenes = {
         imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
         decisions: [
             {description: "Empezar", next: "limbo"},
-            {description: "quitar vida", next: "decreaseLife"},
-            {description: "sumar vida", next: "increaseLife"}
+            {description: "sumar vida", type: "increaseLife"},
+            {description: "quitar vida", type: "decreaseLife"}
         ],
         style: "sceneExample.css"
     },
@@ -23,6 +23,12 @@ export const scenes = {
         decisions: [
             {description: "al comienzo", next: "start"}
         ],
+        style: "sceneExample.css"
+    },
+    gameover: {
+        description: "Game Over",
+        imgUrl: "",
+        decisions: [],
         style: "sceneExample.css"
     }
 }
