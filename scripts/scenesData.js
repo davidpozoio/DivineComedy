@@ -13,7 +13,8 @@ export const scenes = {
         description: "soy limbo",
         imgUrl: "https://imagenes.elpais.com/resizer/iTvj-2_NqCqbV8Q8KxaC7uafCB0=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/ZM2ZBNP5XUKH63E4MNQDBLV3SI.jpg",
         decisions: [
-            {description: "a la gula", next: "gula"}
+            {description: "a la gula", next: "gula"},
+            {description: "sumar vida", type: "increaseLife", appear: true}
         ],
         style: "sceneExample2.css"
     },
@@ -28,7 +29,9 @@ export const scenes = {
     gameover: {
         description: "",
         imgUrl: "https://static.vecteezy.com/system/resources/previews/000/105/438/original/vector-comic-style-game-over-illustration.jpg",
-        decisions: [],
+        decisions: [
+            {description: "reintentar", next: 'start', type: 'reload'}
+        ],
         style: "sceneExample.css"
     }
 }
