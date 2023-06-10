@@ -1,4 +1,8 @@
 export const $game = document.querySelector(".game");
+export const nameScene = {
+  actual: 'start',
+  previous: 'start'
+};
 export const health = {
   lifePoints: 3,
   minLife: 0,

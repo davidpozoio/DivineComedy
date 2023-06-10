@@ -4,7 +4,7 @@ export const scenes = {
         imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
         decisions: [
             {description: "Empezar", next: "limbo"},
-            {description: "sumar vida", type: "increaseLife"},
+            {description: "sumar vida", type: "increaseLife", appear: true},
             {description: "quitar vida", type: "decreaseLife"}
         ],
         style: "sceneExample.css"
@@ -26,8 +26,8 @@ export const scenes = {
         style: "sceneExample.css"
     },
     gameover: {
-        description: "Game Over",
-        imgUrl: "",
+        description: "",
+        imgUrl: "https://static.vecteezy.com/system/resources/previews/000/105/438/original/vector-comic-style-game-over-illustration.jpg",
         decisions: [],
         style: "sceneExample.css"
     }
