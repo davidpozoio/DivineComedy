@@ -3,7 +3,7 @@ import { loadDecisions, hiddenDecisions } from "./decision.js";
 import { scenes } from "./scenesData.js";
 import { loadSceneStyles } from "./loadSceneStyles.js";
 import { loadLife, increaseLife, decreaseLife } from "./loadLife.js";
-import { cancelTypeEffect, typeEffect} from "./typeEffectFunction.js";
+import { typeEffect} from "./typeEffectFunction.js";
 
 function loadScene({ description, imgUrl, decisions, style }, sceneDom) {
   const { $sceneDescription, $sceneImg, $decisionsContainer } = sceneDom;
@@ -41,9 +41,9 @@ sceneDom.$decisionsContainer.addEventListener("click",(e) => {
     loadScene(scenes["gameover"], sceneDom);
   }
 
-  if (e.target.id != "decisions" && scenes.hasOwnProperty(e.target.id)) {
-    nameScene.actual = e.target.id;
-    loadScene(scenes[e.target.id], sceneDom);
+  if (e.target.id != "decisions" && scenes.hasOwnProperty(e.target.dataset.next)) {
+    nameScene.actual = e.target.dataset.next;
+    loadScene(scenes[e.target.dataset.next], sceneDom);
   }
 });
 

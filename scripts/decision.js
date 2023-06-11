@@ -3,7 +3,9 @@ export function hiddenDecisions(decisionButton, { decisions }) {
     decisionButton.hidden = true;
     decisionButton.dataset.appear = false;
 
-    decisions = decisions.filter((de) => !de.hasOwnProperty("appear"));
+    decisions = decisions.filter(
+      (element) => element != decisions[Number(decisionButton.id)]
+    );
 
     return decisions;
   }
@@ -21,11 +23,14 @@ export function loadDecisions(decisions, sceneDom) {
 
 function getAllDecisions(decisions) {
   let $decisionsFragment = document.createDocumentFragment();
-
+  let id = 0;
   for (let decision of decisions) {
     let $button = document.createElement("button");
 
-    if (decision.hasOwnProperty("next")) $button.id = decision.next;
+    $button.id = id;
+    id++;
+
+    if (decision.hasOwnProperty("next")) $button.dataset.next = decision.next;
     if (decision.hasOwnProperty("type")) $button.dataset.type = decision.type;
     if (decision.hasOwnProperty("appear"))
       $button.dataset.appear = decision.appear;
