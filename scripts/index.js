@@ -2,8 +2,9 @@ import { sceneDom, health, nameScene } from "./scene.js";
 import { loadDecisions, hiddenDecisions } from "./decision.js";
 import { scenes } from "./scenesData.js";
 import { loadSceneStyles } from "./loadSceneStyles.js";
-import { loadLife, increaseLife, decreaseLife } from "./loadLife.js";
+import { loadLife} from "./loadLife.js";
 import { typeEffect} from "./typeEffectFunction.js";
+import { decisionTypeFunction } from "./decisionTypeData.js";
 
 function loadScene({ description, imgUrl, decisions, style }, sceneDom) {
   const { $sceneDescription, $sceneImg, $decisionsContainer } = sceneDom;
@@ -25,19 +26,17 @@ function loadScene({ description, imgUrl, decisions, style }, sceneDom) {
 }
 
 sceneDom.$decisionsContainer.addEventListener("click",(e) => {
-  if (e.target.dataset.type == "increaseLife")
-    health.lifePoints = increaseLife(health);
-  if (e.target.dataset.type == "decreaseLife")
-    health.lifePoints = decreaseLife(health);
-  if (e.target.dataset.type == "reload") window.location.reload();
+
+  if(decisionTypeFunction.hasOwnProperty(e.target.dataset.type))
+  decisionTypeFunction[e.target.dataset.type]();
 
   scenes[nameScene.actual].decisions = hiddenDecisions(
     e.target,
     scenes[nameScene.actual]
   );
 
-  loadLife(health.lifePoints, sceneDom);
-  if (health.lifePoints == 0) {
+  loadLife(health, sceneDom);
+  if (health.lifePoints == 0 && health.active) {
     loadScene(scenes["gameover"], sceneDom);
   }
 

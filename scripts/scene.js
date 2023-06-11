@@ -8,7 +8,8 @@ export const health = {
   minLife: 0,
   maxLife: 3,
   damage: 1,
-  heal: 1
+  heal: 1,
+  active: true
 }
 
 export const sceneDom = {

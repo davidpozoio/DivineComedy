@@ -1,7 +1,10 @@
-export function loadLife(actualLife, sceneDom) {
+export function loadLife({lifePoints, active}, sceneDom) {
   const { $textLife } = sceneDom;
-
-  $textLife.innerHTML = `Life: ${actualLife}`;
+  if(active){
+    $textLife.innerHTML = `Life: ${lifePoints}`;
+  }else{
+    $textLife.innerHTML = '';
+  }
 }
 
 export function increaseLife(health) {

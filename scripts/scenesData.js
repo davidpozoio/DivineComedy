@@ -1,3 +1,5 @@
+import { decisionType } from "./decisionTypeData.js"
+
 export const scenes = {
     start:{
         description: 
@@ -5,8 +7,10 @@ export const scenes = {
         imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
         decisions: [
             {description: "castigar", next: "limbo"},
-            {description: "absolver", type: "decreaseLife", appear: true},
-            {description: "absolver1", type: "decreaseLife", appear: true},
+            {description: 'con vida', type: decisionType.withLifePoints},
+            {description: 'sin vidad', type: decisionType.noLifePoints},
+            {description: 'quitar vida', type: decisionType.decreaseLife}
+            
         ],
         style: "sceneExample.css"
     },
