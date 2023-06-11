@@ -14,9 +14,16 @@
 }
 
 .scene__description{
+    display: block;
+    
+    margin-bottom: 100px;
+
+    width: 400px;
+
     color: white;
     font-size: 3rem;
     text-shadow: 3px 2px black;
+    width: 30ch;
 }
 
 .scene__img{
@@ -33,8 +40,14 @@
     border-radius: 25px;
 
     color: white;
+    transition: transform .5s;
+}
+
+.decisions__button:hover{
+    transform: scale(1.2);
 }
 
 h1{
-    color: white;
+    color: black;
 }
+

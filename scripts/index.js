@@ -3,20 +3,28 @@ import { loadDecisions, hiddenDecisions } from "./decision.js";
 import { scenes } from "./scenesData.js";
 import { loadSceneStyles } from "./loadSceneStyles.js";
 import { loadLife, increaseLife, decreaseLife } from "./loadLife.js";
+import { cancelTypeEffect, typeEffect} from "./typeEffectFunction.js";
 
 function loadScene({ description, imgUrl, decisions, style }, sceneDom) {
-  const { $sceneDescription, $sceneImg } = sceneDom;
+  const { $sceneDescription, $sceneImg, $decisionsContainer } = sceneDom;
 
   loadSceneStyles(style, sceneDom);
 
-  if ($sceneDescription.textContent != description)
-    $sceneDescription.textContent = description;
+  if ($sceneDescription.textContent != description){
+    $sceneDescription.textContent = '';
+    $decisionsContainer.innerHTML = '';
+    typeEffect(description, $sceneDescription)
+      .then(()=>{
+        loadDecisions(decisions, sceneDom);
+      });
+  }
+    
   if ($sceneImg.src != imgUrl) $sceneImg.src = imgUrl;
 
-  loadDecisions(decisions, sceneDom);
+
 }
 
-sceneDom.$decisionsContainer.addEventListener("click", (e) => {
+sceneDom.$decisionsContainer.addEventListener("click",(e) => {
   if (e.target.dataset.type == "increaseLife")
     health.lifePoints = increaseLife(health);
   if (e.target.dataset.type == "decreaseLife")
