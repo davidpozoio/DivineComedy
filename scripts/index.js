@@ -2,47 +2,47 @@ import { sceneDom, health, nameScene } from "./scene.js";
 import { loadDecisions, hiddenDecisions } from "./decision.js";
 import { scenes } from "./scenesData.js";
 import { loadSceneStyles } from "./loadSceneStyles.js";
-import { loadLife} from "./loadLife.js";
-import { typeEffect} from "./typeEffectFunction.js";
+import { loadLife } from "./loadLife.js";
 import { decisionTypeFunction } from "./decisionTypeData.js";
+import { loadDescription } from "./loadDescription.js";
 
-function loadScene({ description, imgUrl, decisions, style }, sceneDom) {
-  const { $sceneDescription, $sceneImg, $decisionsContainer } = sceneDom;
+function loadScene({ description, imgUrl, decisions, styles }, sceneDom) {
+  const {$sceneImg } = sceneDom;
 
-  loadSceneStyles(style, sceneDom);
-
-  if ($sceneDescription.textContent != description){
-    $sceneDescription.textContent = '';
-    $decisionsContainer.innerHTML = '';
-    typeEffect(description, $sceneDescription)
-      .then(()=>{
-        loadDecisions(decisions, sceneDom);
-      });
-  }
-    
   if ($sceneImg.src != imgUrl) $sceneImg.src = imgUrl;
 
+  $sceneImg.onload = () => {
+    loadSceneStyles(styles, sceneDom);
 
+    loadDescription(description, sceneDom).then(() =>
+      loadDecisions(decisions, sceneDom)
+    );
+  };
 }
 
-sceneDom.$decisionsContainer.addEventListener("click",(e) => {
+sceneDom.$decisionsContainer.addEventListener("click", (e) => {
+  let button = e.target;
+  let buttonType = e.target.dataset.type;
 
-  if(decisionTypeFunction.hasOwnProperty(e.target.dataset.type))
-  decisionTypeFunction[e.target.dataset.type]();
+  if (decisionTypeFunction.hasOwnProperty(buttonType))
+    decisionTypeFunction[buttonType]();
 
   scenes[nameScene.actual].decisions = hiddenDecisions(
-    e.target,
+    button,
     scenes[nameScene.actual]
   );
 
   loadLife(health, sceneDom);
-  if (health.lifePoints == 0 && health.active) {
+  if (health.lifePoints == health.minLife && health.active) {
     loadScene(scenes["gameover"], sceneDom);
   }
 
-  if (e.target.id != "decisions" && scenes.hasOwnProperty(e.target.dataset.next)) {
-    nameScene.actual = e.target.dataset.next;
-    loadScene(scenes[e.target.dataset.next], sceneDom);
+  if (
+    e.target.id != "decisions" &&
+    scenes.hasOwnProperty(button.dataset.next)
+  ) {
+    nameScene.actual = button.dataset.next;
+    loadScene(scenes[button.dataset.next], sceneDom);
   }
 });
 
