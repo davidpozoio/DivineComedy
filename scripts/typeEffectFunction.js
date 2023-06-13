@@ -9,7 +9,7 @@ export function typeEffect({ text = "", time = 1 }, domObject) {
     let timePerChar = time / text.length;
 
     for (let char of text) {
-      domObject.textContent += char;
+      domObject.innerHTML += char;
       await delay(timePerChar);
     }
     resolve();

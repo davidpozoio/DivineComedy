@@ -1,5 +1,25 @@
 import { decisionType } from "./decisionTypeData.js"
 
+/**
+ * STRUCTURE OF A SCENE
+ * sceneName: {
+ *      description: {
+ *          text: "text of the scene",
+ *          time: 1 //the time in seconds for the loading of the text
+ *      },
+ *      imgUrl: "link of the main img of a scene",
+ *      decisions: [
+ *          {
+ *           description: 'text of decision',
+ *           next: 'the name of the next scene that will be loaded when you click in this decision', 
+ *           type: 'type of decision, you can get these types of decisionType object',
+ *           appear: true //optional boolean attribute, the decision will disappear when you click on it
+ *          }
+ *      ],
+ *      styles: 'style name of this scene'
+ * }
+ */
+
 export const scenes = {
     start:{
         description: {
@@ -8,7 +28,7 @@ export const scenes = {
             buenas noches,
             buenos días,
             bom dia`,
-            time: 2
+            time: 0.1
         },
         imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
         decisions: [
@@ -32,7 +52,8 @@ export const scenes = {
         decisions: [
             {description: "a la gula", next: "gula"},
             {description: "sumar vida", type: "increaseLife", appear: true},
-            {description: "absolver1", type: "decreaseLife", appear: true}
+            {description: "absolver1", type: "decreaseLife", appear: true},
+            {description: 'al limbo', next: 'start'}
         ],
         styles: "sceneExample2.css"
     },
@@ -51,7 +72,7 @@ export const scenes = {
         description: {},
         imgUrl: "https://static.vecteezy.com/system/resources/previews/000/105/438/original/vector-comic-style-game-over-illustration.jpg",
         decisions: [
-            {description: "reintentar", next: 'start', type: 'reload'}
+            {description: "reintentar", type: 'reload'}
         ],
         styles: "sceneExample.css"
     }

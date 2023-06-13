@@ -18,6 +18,7 @@ function loadScene({ description, imgUrl, decisions, styles }, sceneDom) {
       loadDecisions(decisions, sceneDom)
     );
   };
+  
 }
 
 sceneDom.$decisionsContainer.addEventListener("click", (e) => {

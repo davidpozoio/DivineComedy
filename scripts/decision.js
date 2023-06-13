@@ -1,7 +1,6 @@
 export function hiddenDecisions(decisionButton, { decisions }) {
   if (decisionButton.dataset.appear) {
-    decisionButton.hidden = true;
-    decisionButton.dataset.appear = false;
+    decisionButton.style.display = 'none';
 
     decisions = decisions.filter(
       (element) => element != decisions[Number(decisionButton.id)]

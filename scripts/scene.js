@@ -1,7 +1,6 @@
 export const $game = document.querySelector(".game");
 export const nameScene = {
-  actual: 'start',
-  previous: 'start'
+  actual: 'start'
 };
 export const health = {
   lifePoints: 3,
@@ -17,5 +16,5 @@ export const sceneDom = {
   $sceneImg: document.querySelector(".scene__img"),
   $decisionsContainer: document.querySelector(".decisions"),
   $sceneDescription: document.querySelector(".scene__description"),
-  $textLife: document.querySelector('h1')
+  $textLife: document.querySelector('.life')
 };
