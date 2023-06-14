@@ -9,7 +9,7 @@ import { loadDescription } from "./loadDescription.js";
 function loadScene({ description, imgUrl, decisions, styles }, sceneDom) {
   const {$sceneImg } = sceneDom;
 
-  if ($sceneImg.src != imgUrl) $sceneImg.src = imgUrl;
+  $sceneImg.src = imgUrl;
 
   $sceneImg.onload = () => {
     loadSceneStyles(styles, sceneDom);
