@@ -24,15 +24,12 @@ export const scenes = {
     start:{
         description: {
             text: 
-            `crees que el placer de la lujuria sea un pecado que deba ser castigado?
-            buenas noches,
-            buenos días,
-            bom dia`,
+            `Inicio`,
             time: 0.1
         },
         imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
         decisions: [
-            {description: "castigar", next: "limbo"},
+            {description: "start", next: "limbo"},
             {description: 'con vida', type: decisionType.withLifePoints},
             {description: 'sin vidad', type: decisionType.noLifePoints},
             {description: 'quitar vida', type: decisionType.decreaseLife}
@@ -51,8 +48,6 @@ export const scenes = {
         imgUrl: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/11/16182137/diablo-divina-comedia-Gustave-Dore.jpg",
         decisions: [
             {description: "Castigar", next: "lujuria"},
-            {description: "sumar vida", type: "increaseLife", appear: true},
-            {description: "absolver1", type: "decreaseLife", appear: true},
             {description: 'al limbo', next: 'start'}
         ],
         styles: "sceneExample2.css"
@@ -94,7 +89,8 @@ export const scenes = {
         decisions: [
             {description: "Castigar", next:"gula"},
             {description: "Absolver", type: decisionType.decreaseLife, appear: true},
-        ]
+        ],
+        styles: 'sceneExample.css'
         
     }
     
