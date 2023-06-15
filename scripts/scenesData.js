@@ -48,7 +48,7 @@ export const scenes = {
             bom dia`,
             time: 0.1
         },
-        imgUrl: "https://imagenes.elpais.com/resizer/iTvj-2_NqCqbV8Q8KxaC7uafCB0=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/ZM2ZBNP5XUKH63E4MNQDBLV3SI.jpg",
+        imgUrl: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/11/16182137/diablo-divina-comedia-Gustave-Dore.jpg",
         decisions: [
             {description: "a la gula", next: "gula"},
             {description: "sumar vida", type: "increaseLife", appear: true},
@@ -62,7 +62,7 @@ export const scenes = {
             text: 'soy Gula',
             time: 2
         },
-        imgUrl: "https://emprendedoresnews.com/wp-content/uploads/2015/04/gula_conocimiento-1.jpg",
+        imgUrl: "https://www.otroangulo.info/fabricaweb/wp-content/uploads/Divina-comedia-1.jpg",
         decisions: [
             {description: "al comienzo", next: "start"}
         ],
@@ -70,7 +70,7 @@ export const scenes = {
     },
     gameover: {
         description: {},
-        imgUrl: "https://static.vecteezy.com/system/resources/previews/000/105/438/original/vector-comic-style-game-over-illustration.jpg",
+        imgUrl: "https://media.tenor.com/pFb2zxhaxswAAAAC/game-over.gif",
         decisions: [
             {description: "reintentar", type: 'reload'}
         ],
