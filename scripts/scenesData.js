@@ -50,7 +50,7 @@ export const scenes = {
         },
         imgUrl: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/11/16182137/diablo-divina-comedia-Gustave-Dore.jpg",
         decisions: [
-            {description: "a la gula", next: "gula"},
+            {description: "Castigar", next: "lujuria"},
             {description: "sumar vida", type: "increaseLife", appear: true},
             {description: "absolver1", type: "decreaseLife", appear: true},
             {description: 'al limbo', next: 'start'}
@@ -77,8 +77,29 @@ export const scenes = {
             {description: "reintentar", type: 'reload'}
         ],
         styles: "gameover.css"
+    },
+    lujuria: {
+        description: {
+            text: `Durante su travesía y a través del 
+            círculo de la lujuria  Dante encuentra
+             a varias figuras históricas, como 
+            Cleopatra, Helena de Troya y Tristán 
+            e Isolda. Estas figuras simbolizan la 
+            fama y las consecuencias trágicas que 
+            surgieron de la lujuria en vida.
+            `,
+            time: 0.1
+        },
+        imgUrl: "https://creacuervos.com/wp-content/uploads/2021/01/divina-comedia-suicidas.jpg",
+        decisions: [
+            {description: "Castigar", next:"gula"},
+            {description: "Absolver", type: decisionType.decreaseLife, appear: true},
+        ]
+        
     }
-
+    
 }
+
+
 
 
