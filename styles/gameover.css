@@ -1,0 +1,7 @@
+@import url("./sceneExample.css");
+
+.scene__description{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}

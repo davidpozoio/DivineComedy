@@ -69,12 +69,14 @@ export const scenes = {
         styles: "sceneExample.css"
     },
     gameover: {
-        description: {},
-        imgUrl: "https://media.tenor.com/pFb2zxhaxswAAAAC/game-over.gif",
+        description: {
+            text:"GAME OVER"
+        },
+        imgUrl: "https://i.pinimg.com/originals/dc/66/78/dc6678f5dd9b6e61d9852666981afe7b.gif",
         decisions: [
             {description: "reintentar", type: 'reload'}
         ],
-        styles: "sceneExample.css"
+        styles: "gameover.css"
     }
 
 }
