@@ -13,6 +13,10 @@
     overflow: hidden;
 }
 
+.scene__title{
+    color: white;
+}
+
 .description{
     display: block;
     
@@ -49,10 +53,6 @@
 
 .decisions__button:hover{
     transform: scale(1.2);
-}
-
-h1{
-    color: white;
 }
 
 button{

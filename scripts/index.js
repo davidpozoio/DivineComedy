@@ -6,14 +6,14 @@ import { loadLife } from "./load-functions/loadLife.js";
 import { decisionTypeFunction } from "./data/decisionTypeData.js";
 import { loadDescription} from "./load-functions/loadDescription.js";
 
-function loadScene({ description, imgUrl="../assets/img-backgrounds/noImage.jpeg", decisions, styles }, sceneDom) {
-  const { $sceneImg } = sceneDom;
+function loadScene({ title="", description, imgUrl="../assets/img-backgrounds/noImage.jpeg", decisions, styles }, sceneDom) {
+  const { $sceneImg, $sceneTitle } = sceneDom;
 
   $sceneImg.src = imgUrl;
 
   $sceneImg.onload = () => {
     loadSceneStyles(styles, sceneDom);
-
+    $sceneTitle.innerHTML = title;
     loadDescription(description, sceneDom, true).then(() => {
       loadDecisions(decisions, sceneDom);
     });

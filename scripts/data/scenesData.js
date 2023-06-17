@@ -3,9 +3,11 @@ import { decisionType } from "./decisionTypeData.js"
 /**
  * STRUCTURE OF A SCENE
  * sceneName: {
+ *      title: "title of the scene, it is optional attribute",
  *      description: {
- *          text: "text of the scene",
- *          time: 1 //the time in seconds for the loading of the text
+ *          context: "here you can put the context of the scene or a brief description",
+ *          text: "text of the scene, it can be a question or any thing",
+ *          time: 1 //the time in seconds for the loading of the all description (context, text)
  *      },
  *      imgUrl: "link of the main img of a scene",
  *      decisions: [
@@ -22,11 +24,8 @@ import { decisionType } from "./decisionTypeData.js"
 
 export const scenes = {
     start:{
-        description: {
-            text: 
-            `Inicio`,
-            time: 0.1
-        },
+        title: "START GAME",
+        description: {},
         imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
         decisions: [
             {description: "start", next: "intro"},
