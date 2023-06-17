@@ -55,7 +55,7 @@ export const scenes = {
             text: "VIRGILIO: Tienes en tus manos el alma de estos personajes, ¿qué quieres hacer con ellos?",
             time: 0.5
         },
-        imgUrl: "asd",
+        imgUrl: "https://wallpaperaccess.com/full/2316868.jpg",
         decisions: [
             {description: "Castigar", next: "lujuria"},
             {description: 'Absolver', type: decisionType.decreaseLife, appear: true}
@@ -94,11 +94,25 @@ export const scenes = {
         imgUrl: "https://www.otroangulo.info/fabricaweb/wp-content/uploads/Divina-comedia-1.jpg",
         decisions: [
             {description: "Hambriento", type: decisionType.decreaseLife, appear: true},
-            {description: "Sin apetito", next:"start"},
+            {description: "Sin apetito", next:"avaricia"},
             {description: "Quiero ayudarlos", type: decisionType.decreaseLife, appear: true},
             {description: "Vamonos de aqui", type: decisionType.decreaseLife, appear: true},
         ],
         styles: "sceneExample.css"
+    },
+     avaricia:{
+        description: {
+            context: 'Al entrar al cuarto círculo, Dante encuentra a varias figuras históricas, como Midas, el rey de Frigia, conocido por su deseo insaciable de oro. Estas figuras representan a aquellos que en vida fueron consumidos por su afán de acumular riquezas y no supieron usarlas para fines justos o caritativos.',
+            text: "VIRGILIO: El rey midas por su codicia cayó en la locura, pero se arrepintió al final, crees que merece ser castigado de tal manera?",
+            time:0.5
+        },
+        imgUrl: "https://pbs.twimg.com/media/E_RjCDDWUAcclgl.png",
+        decisions: [
+            {description: "Castigar", next:"start"},
+            {description: "Absolver", type: decisionType.decreaseLife, appear: true},
+        ],
+        styles: "sceneExample.css"
+
     },
     gameover: {
         description: {
