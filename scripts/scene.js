@@ -15,6 +15,8 @@ export const sceneDom = {
   $link: document.querySelector("link"),
   $sceneImg: document.querySelector(".scene__img"),
   $decisionsContainer: document.querySelector(".decisions"),
-  $sceneDescription: document.querySelector(".scene__description"),
+  $sceneDescription: document.querySelector(".description"),
+  $sceneText: document.querySelector(".description__text"),
+  $sceneContext: document.querySelector(".description__context"),
   $textLife: document.querySelector('.life')
 };

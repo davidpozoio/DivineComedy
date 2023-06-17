@@ -39,13 +39,14 @@ export const scenes = {
     },
     limbo:{
         description: {
-            text: `crees que el placer de la lujuria sea un pecado que deba ser castigado?
+            context: `crees que el placer de la lujuria sea un pecado que deba ser castigado?
             buenas noches,
             buenos días,
             bom dia`,
-            time: 0.1
+            text: "bom dia hola",
+            time: 0.5
         },
-        imgUrl: "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/11/16182137/diablo-divina-comedia-Gustave-Dore.jpg",
+        imgUrl: "asd",
         decisions: [
             {description: "Castigar", next: "lujuria"},
             {description: 'al limbo', next: 'start'}
@@ -75,7 +76,7 @@ export const scenes = {
     },
     lujuria: {
         description: {
-            text: `Durante su travesía y a través del 
+            context: `Durante su travesía y a través del 
             círculo de la lujuria  Dante encuentra
              a varias figuras históricas, como 
             Cleopatra, Helena de Troya y Tristán 

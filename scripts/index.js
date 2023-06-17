@@ -4,21 +4,25 @@ import { scenes } from "./scenesData.js";
 import { loadSceneStyles } from "./loadSceneStyles.js";
 import { loadLife } from "./loadLife.js";
 import { decisionTypeFunction } from "./decisionTypeData.js";
-import { loadDescription } from "./loadDescription.js";
+import { loadDescription} from "./loadDescription.js";
 
-function loadScene({ description, imgUrl, decisions, styles }, sceneDom) {
-  const {$sceneImg } = sceneDom;
+function loadScene({ description, imgUrl="../assets/img-backgrounds/noImage.jpeg", decisions, styles }, sceneDom) {
+  const { $sceneImg } = sceneDom;
 
   $sceneImg.src = imgUrl;
 
   $sceneImg.onload = () => {
     loadSceneStyles(styles, sceneDom);
 
-    loadDescription(description, sceneDom).then(() =>
-      loadDecisions(decisions, sceneDom)
-    );
+    loadDescription(description, sceneDom, true).then(() => {
+      loadDecisions(decisions, sceneDom);
+    });
   };
-  
+
+  $sceneImg.onerror = ()=>{
+    $sceneImg.src = "../assets/img-backgrounds/noImage.jpeg";
+    console.log("link no válido");
+  }
 }
 
 sceneDom.$decisionsContainer.addEventListener("click", (e) => {

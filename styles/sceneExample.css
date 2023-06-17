@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 
-.scene__description{
+.description{
     display: block;
     
     margin-bottom: 100px;
@@ -24,6 +24,10 @@
     font-size: 3rem;
     text-shadow: 3px 2px black;
     width: 29ch;
+}
+
+.description__context{
+    color: red;
 }
 
 .scene__img{
@@ -56,4 +60,5 @@ button{
     margin-top: 10px;
 
 }
+
 
