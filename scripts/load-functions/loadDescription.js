@@ -1,4 +1,4 @@
-import { typeEffect } from "./typeEffectFunction.js";
+import { typeEffect } from "../effect-functions/typeEffectFunction.js";
 
 export function loadDescription(description, sceneDom, sequentialLoad = true) {
   const { $decisionsContainer, $sceneContext, $sceneText } = sceneDom;

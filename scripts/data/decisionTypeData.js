@@ -1,4 +1,4 @@
-import { decreaseLife, increaseLife } from "./loadLife.js"
+import { decreaseLife, increaseLife } from "../load-functions/loadLife.js"
 import { health } from "./scene.js"
 
 /**

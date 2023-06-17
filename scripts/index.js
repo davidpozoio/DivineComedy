@@ -1,10 +1,10 @@
-import { sceneDom, health, nameScene } from "./scene.js";
-import { loadDecisions, hiddenDecisions } from "./decision.js";
-import { scenes } from "./scenesData.js";
-import { loadSceneStyles } from "./loadSceneStyles.js";
-import { loadLife } from "./loadLife.js";
-import { decisionTypeFunction } from "./decisionTypeData.js";
-import { loadDescription} from "./loadDescription.js";
+import { sceneDom, health, nameScene } from "./data/scene.js";
+import { loadDecisions, hiddenDecisions } from "./load-functions/decision.js";
+import { scenes } from "./data/scenesData.js";
+import { loadSceneStyles } from "./load-functions/loadSceneStyles.js";
+import { loadLife } from "./load-functions/loadLife.js";
+import { decisionTypeFunction } from "./data/decisionTypeData.js";
+import { loadDescription} from "./load-functions/loadDescription.js";
 
 function loadScene({ description, imgUrl="../assets/img-backgrounds/noImage.jpeg", decisions, styles }, sceneDom) {
   const { $sceneImg } = sceneDom;
