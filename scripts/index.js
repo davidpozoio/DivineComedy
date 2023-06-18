@@ -4,12 +4,25 @@ import { scenes } from "./data/scenesData.js";
 import { loadSceneStyles } from "./load-functions/loadSceneStyles.js";
 import { loadLife } from "./load-functions/loadLife.js";
 import { decisionTypeFunction } from "./data/decisionTypeData.js";
-import { loadDescription} from "./load-functions/loadDescription.js";
+import { loadDescription } from "./load-functions/loadDescription.js";
 import { audioController } from "./audioController/audioController.js";
 import { audioData } from "./data/audioData.js";
-import { loadTheme } from "./load-functions/loadAudio.js";
+import {
+  playClickAudio,
+  playHoverAudio,
+  playSceneTheme,
+} from "./audioController/playAudio.js";
 
-function loadScene({ title="", description, imgUrl="../assets/img-backgrounds/noImage.jpeg", decisions, styles }, sceneDom) {
+function loadScene(
+  {
+    title = "",
+    description,
+    imgUrl = "../assets/img-backgrounds/noImage.jpeg",
+    decisions,
+    styles,
+  },
+  sceneDom
+) {
   const { $sceneImg, $sceneTitle } = sceneDom;
 
   $sceneImg.src = imgUrl;
@@ -22,27 +35,20 @@ function loadScene({ title="", description, imgUrl="../assets/img-backgrounds/no
     });
   };
 
-  $sceneImg.onerror = ()=>{
+  $sceneImg.onerror = () => {
     $sceneImg.src = "../assets/img-backgrounds/noImage.jpeg";
-    console.log("link no válido");
-  }
+  };
 }
 
 sceneDom.$decisionsContainer.addEventListener("click", (e) => {
-
-  if(audioData.hasOwnProperty(e.target.dataset.next)){
-    loadTheme("../assets/audio/soundtrack/abadiaIncio.mp3", audioController);
-  }
-  
-
-  if(e.target.id != "decisions"){
-    audioController.clickAudio = new Audio("../assets/audio/soundtrack/clickEffect.mp3");
-
-    audioController.clickAudio.play();
-  }
-
   let button = e.target;
   let buttonType = e.target.dataset.type;
+
+  if (button != "decisions") {
+    playClickAudio(audioController);
+  }
+
+  playSceneTheme(audioData[button.dataset.next], audioController);
 
   if (decisionTypeFunction.hasOwnProperty(buttonType))
     decisionTypeFunction[buttonType]();
@@ -66,11 +72,9 @@ sceneDom.$decisionsContainer.addEventListener("click", (e) => {
   }
 });
 
-sceneDom.$decisionsContainer.addEventListener("mouseover", (e)=>{
-  if(e.target.id != "decisions"){
-    audioController.hoverAudio = new Audio("../assets/audio/soundtrack/hoverEffect.mp3");
-
-    audioController.hoverAudio.play();
+sceneDom.$decisionsContainer.addEventListener("mouseover", (e) => {
+  if (e.target.id != "decisions") {
+    playHoverAudio(audioController);
   }
 });
 
