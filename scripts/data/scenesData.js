@@ -108,11 +108,26 @@ export const scenes = {
         },
         imgUrl: "https://pbs.twimg.com/media/E_RjCDDWUAcclgl.png",
         decisions: [
-            {description: "Castigar", next:"start"},
+            {description: "Castigar", next:"pereza"},
             {description: "Absolver", type: decisionType.decreaseLife, appear: true},
         ],
         styles: "sceneExample.css"
 
+    },
+    pereza:{
+        description: {
+            context: `Conforme Dante avanza por los diferentes círculos del infierno llega al Pantano de Estigia. Dante encuentra a los pecadores que han sido consumidos por la ira y la violencia en vida.Los iracundos explosivos se encuentran, enfrentándose entre ellos y golpeándose mutuamente. Los iracundos reprimidos se encuentran más alejados y reprimen su ira, sumidos en un estado de tristeza y resentimiento.`,
+            text: "¿Qué castigo sufren los pecadores en el círculo de la ira en La Divina Comedia?",            
+            time:0.5
+        },
+        imgUrl: "	https://pm1.aminoapps.com/6759/9779f6f588b6a02eb538761d6d0d4e6227746297v2_hq.jpg",
+        decisions: [
+            {description: "Son sumergidos en un pantano de lodo y se enfrentan entre sí.", next:"herejia"},
+            {description: "Son congelados en el lago Cocito.", type: decisionType.decreaseLife, appear: false},
+            {description: "Son sometidos a un fuego eterno.", type: decisionType.decreaseLife, appear: false},
+            {description: "Se enfrentan entre sí.", type: decisionType.decreaseLife, appear: true},
+        ],
+        styles: "sceneExample.css"
     },
     gameover: {
         description: {
