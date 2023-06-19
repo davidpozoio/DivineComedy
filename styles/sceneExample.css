@@ -55,6 +55,11 @@
     transform: scale(1.2);
 }
 
+.life{
+    font-size: 3rem;
+    color: white;
+}
+
 button{
     display: block;
     margin-top: 10px;

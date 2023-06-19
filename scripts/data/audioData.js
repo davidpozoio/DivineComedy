@@ -8,7 +8,7 @@
  */
 
 export const audioData = {
-    limbo: {
+    intro: {
         audioSource: "../assets/audio/soundtrack/abadiaIncio.mp3",
         loop: true,
         volume: 0.1
