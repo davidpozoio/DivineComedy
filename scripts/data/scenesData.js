@@ -129,6 +129,30 @@ export const scenes = {
         ],
         styles: "sceneExample.css"
     },
+
+    herejia:{
+        description: {
+            context: `Dante y su guía, Virgilio, descienden a este círculo después de 
+            atravesar los círculos de la avaricia, la gula, la lujuria y la 
+            ira.
+            Dante encuentra a diversas figuras históricas 
+             y teológicas en este círculo, como Epicuro y 
+            Federico II de Sicilia. Estas figuras representan
+             a aquellos que, en vida, promovieron doctrinas 
+             contrarias a la enseñanza de la Iglesia y fueron 
+            considerados herejes.`,
+            text: " ¿Cómo define la iglesia católica la herejía y cuáles son las consecuencias para aquellos acusados  de herejía?",
+            time: 0.5,
+        },
+        imgUrl: "https://i.pinimg.com/originals/ed/f2/92/edf292e3a45d21eae2ce395d579c08d7.gif",
+        decisions: [
+            {description: "Aquellos acusados de herejía podrían enfrentar diversas consecuencias", next: "violencia"},
+            {description: "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa", type: decisionType.decreaseLife, appear: false},
+        ],
+        styles: "sceneExample.css"
+    },
+
+
     gameover: {
         description: {
             text:"GAME OVER"
