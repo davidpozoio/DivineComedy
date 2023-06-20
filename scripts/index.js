@@ -11,6 +11,7 @@ import {
   playHoverAudio,
   playSceneTheme,
 } from "./audioController/playAudio.js";
+import { loadImages } from "./load-functions/load-images/loadImages.js";
 
 sceneDom.$decisionsContainer.addEventListener("click", (e) => {
   let button = e.target;
@@ -48,4 +49,9 @@ sceneDom.$decisionsContainer.addEventListener("mouseover", (e) => {
   }
 });
 
-loadScene(scenes["start"], sceneDom);
+
+loadImages(scenes, sceneDom)
+  .then(()=>{
+    loadScene(scenes["start"], sceneDom);
+  });
+

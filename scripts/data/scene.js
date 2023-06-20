@@ -13,6 +13,7 @@ export const health = {
 
 export const sceneDom = {
   $link: document.querySelector("link"),
+  $loadingBar: document.querySelector(".loading__bar"),
   $sceneImg: document.querySelector(".scene__img"),
   $decisionsContainer: document.querySelector(".decisions"),
   $sceneTitle: document.querySelector(".scene__title"),

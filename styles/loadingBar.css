@@ -1,0 +1,13 @@
+.loading{
+    background-color: black;
+    outline: 3px solid black;
+}
+
+.loading__bar{
+    color: red;
+    width: 0%;
+    height: 100px;
+
+    background-color: rebeccapurple;
+    transition: width 0.3s;
+}
