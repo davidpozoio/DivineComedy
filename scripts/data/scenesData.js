@@ -166,14 +166,25 @@ export const scenes = {
         },
         imgUrl: "https://i.pinimg.com/originals/ed/f2/92/edf292e3a45d21eae2ce395d579c08d7.gif",
         decisions: [
-            {description: "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral", next: "start"},
+            {description: "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral", next: "fraude"},
             {description: "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas", type: decisionType.decreaseLife, appear: false},
         ],
         styles: "sceneExample.css"
     },
-
-
-
+    fraude:{
+        title:'fraude',
+        description:{
+            context: 'Tras pasar por el séptimo círculo Dantes se adentra en el octavo círculo del Infierno, conocido como el "Malebolge". Este círculo está dividido en diez fosas, cada una destinada a diferentes formas de fraude. Cada castigo se encuentra dividido por los diferentes tipos de fraude, como la hipocresía, el engaño, la seducción, la corrupción política y religiosa, entre otros. Cada fosa está reservada para un tipo específico de fraude y tiene su propio castigo particular.',
+            text: '¿Cómo se castigan los actos de fraude en los diferentes círculos del Infierno según la visión de Dante?',
+            time: 0.5
+        },
+        imgUrl:"https://4.bp.blogspot.com/-NxtwHA2FzN8/Wrz-y75u15I/AAAAAAAADJc/bo_4iE0SMTI0G18uuioDcZ6h4oCRKiFGgCLcBGAs/s1600/inferno-19.jpg",
+        decisions:[
+            {description: "Hay diez fosos que albergan a diferentes tipos de fraudulentos", next:"traicion"},
+            {description: "Los fraudulentos son redimidos y perdonados, ya que se considera que su comportamiento deshonesto fue producto de circunstancias difíciles", type: decisionType.decreaseLife, appear: true},
+        ],
+        styles: "sceneExample.css"
+    },
     gameover: {
         description: {
             text:"GAME OVER"
