@@ -22,6 +22,7 @@ import { decisionType } from "./decisionTypeData.js"
  * }
  */
 
+
 export const scenes = {
     start:{
         title: "START GAME",
