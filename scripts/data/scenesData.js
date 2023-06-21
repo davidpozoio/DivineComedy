@@ -50,6 +50,7 @@ export const scenes = {
         styles: "sceneExample2.css"
     },
     limbo:{
+        title:'Limbo',
         description: {
             context: `Dante, llega al Limbo durante su viaje a través del Infierno. Se encuentra con personajes históricos y mitológicos, como Homero, Sócrates, Platón y César, que viven en una especie de felicidad relativa, pero sin la visión de Dios.`,
             text: "VIRGILIO: Tienes en tus manos el alma de estos personajes, ¿qué quieres hacer con ellos?",
@@ -64,6 +65,7 @@ export const scenes = {
     },
 
     lujuria: {
+        title:'Lujuria',
         description: {
             context: `Durante su travesía y a través del 
             círculo de la lujuria  Dante encuentra
@@ -86,6 +88,7 @@ export const scenes = {
     },
 
     gula: {
+        title:'Gula',
         description: {
             context:`A medida que Dante avanza por el infierno, llega al tercer círculo, donde se encuentra con alegorías y figuras que ilustran los efectos destructivos de la gula. Estos ejemplos contrastan con la virtud de la moderación y la necesidad de controlar los apetitos y deseos excesivos.A medida que Dante avanza, interactúa con algunos de los pecadores y escucha sus historias y lamentaciones. Estas interacciones ayudan a transmitir las consecuencias y la naturaleza del pecado de la gula.`,
             text: "VIRGILIO: ¿cómo te sientes tras tales acontecimientos escuchados?",
@@ -101,6 +104,7 @@ export const scenes = {
         styles: "sceneExample.css"
     },
      avaricia:{
+        title:'Avaricia',
         description: {
             context: 'Al entrar al cuarto círculo, Dante encuentra a varias figuras históricas, como Midas, el rey de Frigia, conocido por su deseo insaciable de oro. Estas figuras representan a aquellos que en vida fueron consumidos por su afán de acumular riquezas y no supieron usarlas para fines justos o caritativos.',
             text: "VIRGILIO: El rey midas por su codicia cayó en la locura, pero se arrepintió al final, crees que merece ser castigado de tal manera?",
@@ -115,6 +119,7 @@ export const scenes = {
 
     },
     pereza:{
+        title:'Pereza',
         description: {
             context: `Conforme Dante avanza por los diferentes círculos del infierno llega al Pantano de Estigia. Dante encuentra a los pecadores que han sido consumidos por la ira y la violencia en vida.Los iracundos explosivos se encuentran, enfrentándose entre ellos y golpeándose mutuamente. Los iracundos reprimidos se encuentran más alejados y reprimen su ira, sumidos en un estado de tristeza y resentimiento.`,
             text: "¿Qué castigo sufren los pecadores en el círculo de la ira en La Divina Comedia?",            
@@ -131,6 +136,7 @@ export const scenes = {
     },
 
     herejia:{
+        title:'Herejia',
         description: {
             context: `Dante y su guía, Virgilio, descienden a este círculo después de 
             atravesar los círculos de la avaricia, la gula, la lujuria y la 
@@ -151,6 +157,21 @@ export const scenes = {
         ],
         styles: "sceneExample.css"
     },
+    violencia:{
+        title:'Violencia',
+        description: {
+            context: `Al llegar al séptimo círculo Dante se encuentra con varias almas condenadas que son sumergidos en un río de sangre hirviente y son perseguidos y atacados por centauros. En el segundo círculo, llamado "Fosa de los Violentos contra sí mismos", se encuentran los suicidas, transformados en árboles y constantemente atormentados.`,
+            text: "¿Cuáles son las diferentes formas de violencia que Dante encuentra a lo largo de su viaje en la obra?",
+            time: 0.5,
+        },
+        imgUrl: "https://i.pinimg.com/originals/ed/f2/92/edf292e3a45d21eae2ce395d579c08d7.gif",
+        decisions: [
+            {description: "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral", next: "start"},
+            {description: "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas", type: decisionType.decreaseLife, appear: false},
+        ],
+        styles: "sceneExample.css"
+    },
+
 
 
     gameover: {
