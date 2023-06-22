@@ -22,14 +22,16 @@ import { decisionType } from "./decisionTypeData.js"
  * }
  */
 
+
 export const scenes = {
     start:{
         title: "START GAME",
         description: {},
-        imgUrl: "https://3.bp.blogspot.com/-Ll5H0jw65rE/Wq6ZkcQ0nXI/AAAAAAAADGA/1soISUHQy_Yv_co0CdTF8rJtHIhOZUr7ACLcBGAs/s1600/inferno-4.jpg",
+        imgUrl: "../assets/img/INICIO.jpg",
         decisions: [
             {description: "start", next: "intro"},
-            {description: 'cambiar vida', type: decisionType.toggleLife},
+            {description: 'con vida', type: decisionType.withLifePoints},
+            {description: 'sin vidad', type: decisionType.noLifePoints},
             {description: 'quitar vida', type: decisionType.decreaseLife}
             
         ],
@@ -41,7 +43,7 @@ export const scenes = {
             text: "VIRGILIO: veo claramente que debes seguirme, yo seré tu guía y te sacaré de aquí para llevarte a un lugar eterno:",
             time: 1
         },
-        imgUrl: "asd",
+        imgUrl: "../assets/img/introduccion.jpg",
         decisions: [
             {description: "Seguir", next: "limbo"},
             {description: 'No seguir', next: 'start'}
@@ -54,7 +56,7 @@ export const scenes = {
             text: "VIRGILIO: Tienes en tus manos el alma de estos personajes, ¿qué quieres hacer con ellos?",
             time: 0.5
         },
-        imgUrl: "https://wallpaperaccess.com/full/2316868.jpg",
+        imgUrl: "../assets/img/nivel 1.jpg",
         decisions: [
             {description: "Castigar", next: "lujuria"},
             {description: 'Absolver', type: decisionType.decreaseLife, appear: true}
@@ -75,7 +77,7 @@ export const scenes = {
             text: "¿Crees que el placer de la lujuria sea un pecado que deba ser castigado?",
             time: 0.1
         },
-        imgUrl: "https://creacuervos.com/wp-content/uploads/2021/01/divina-comedia-suicidas.jpg",
+        imgUrl: "../assets/img/nivel2.jpg",
         decisions: [
             {description: "Castigar", next:"gula"},
             {description: "Absolver", type: decisionType.decreaseLife, appear: true},
@@ -90,7 +92,7 @@ export const scenes = {
             text: "VIRGILIO: ¿cómo te sientes tras tales acontecimientos escuchados?",
             time: 2
         },
-        imgUrl: "https://www.otroangulo.info/fabricaweb/wp-content/uploads/Divina-comedia-1.jpg",
+        imgUrl: "../assets/img/nivel 3.jpg",
         decisions: [
             {description: "Hambriento", type: decisionType.decreaseLife, appear: true},
             {description: "Sin apetito", next:"avaricia"},
@@ -99,19 +101,95 @@ export const scenes = {
         ],
         styles: "sceneExample.css"
     },
-     avaricia:{
+    avaricia:{
         description: {
             context: 'Al entrar al cuarto círculo, Dante encuentra a varias figuras históricas, como Midas, el rey de Frigia, conocido por su deseo insaciable de oro. Estas figuras representan a aquellos que en vida fueron consumidos por su afán de acumular riquezas y no supieron usarlas para fines justos o caritativos.',
             text: "VIRGILIO: El rey midas por su codicia cayó en la locura, pero se arrepintió al final, crees que merece ser castigado de tal manera?",
             time:0.5
         },
-        imgUrl: "https://pbs.twimg.com/media/E_RjCDDWUAcclgl.png",
+        imgUrl: "../assets/img/nivel 4.jpg",
         decisions: [
-            {description: "Castigar", next:"start"},
+            {description: "Castigar", next:"pereza"},
             {description: "Absolver", type: decisionType.decreaseLife, appear: true},
         ],
         styles: "sceneExample.css"
 
+    },
+    pereza:{
+        description: {
+            context: `Conforme Dante avanza por los diferentes círculos del infierno llega al Pantano de Estigia. Dante encuentra a los pecadores que han sido consumidos por la ira y la violencia en vida.Los iracundos explosivos se encuentran, enfrentándose entre ellos y golpeándose mutuamente. Los iracundos reprimidos se encuentran más alejados y reprimen su ira, sumidos en un estado de tristeza y resentimiento.`,
+            text: "¿Qué castigo sufren los pecadores en el círculo de la ira en La Divina Comedia?",            
+            time:0.5
+        },
+        imgUrl: "../assets/img/nivel 5.jpg",
+        decisions: [
+            {description: "Son sumergidos en un pantano de lodo y se enfrentan entre sí.", next:"herejia"},
+            {description: "Son congelados en el lago Cocito.", type: decisionType.decreaseLife, appear: false},
+            {description: "Son sometidos a un fuego eterno.", type: decisionType.decreaseLife, appear: false},
+            {description: "Se enfrentan entre sí.", type: decisionType.decreaseLife, appear: true},
+        ],
+        styles: "sceneExample.css"
+    },
+
+    herejia:{
+        description: {
+            context: `Dante y su guía, Virgilio, descienden a este círculo después de 
+            atravesar los círculos de la avaricia, la gula, la lujuria y la 
+            ira.
+            Dante encuentra a diversas figuras históricas 
+             y teológicas en este círculo, como Epicuro y 
+            Federico II de Sicilia. Estas figuras representan
+             a aquellos que, en vida, promovieron doctrinas 
+             contrarias a la enseñanza de la Iglesia y fueron 
+            considerados herejes.`,
+            text: " ¿Cómo define la iglesia católica la herejía y cuáles son las consecuencias para aquellos acusados  de herejía?",
+            time: 0.5,
+        },
+        imgUrl: "../assets/img/nivel 6.jpg",
+        decisions: [
+            {description: "Aquellos acusados de herejía podrían enfrentar diversas consecuencias", next: "violencia"},
+            {description: "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa", type: decisionType.decreaseLife, appear: false},
+        ],
+        styles: "sceneExample.css"
+    },
+    violencia:{
+        description: {
+            context: `Al llegar al séptimo círculo Dante se encuentra con varias almas condenadas que son sumergidos en un río de sangre hirviente y son perseguidos y atacados por centauros. En el segundo círculo, llamado "Fosa de los Violentos contra sí mismos", se encuentran los suicidas, transformados en árboles y constantemente atormentados.`,
+            text: "¿Cuáles son las diferentes formas de violencia que Dante encuentra a lo largo de su viaje en la obra?",
+            time: 0.5,
+        },
+        imgUrl: "../assets/img/nivel 7.jpg",
+        decisions: [
+            {description: "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral", next: "fraude"},
+            {description: "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas", type: decisionType.decreaseLife, appear: false},
+        ],
+        styles: "sceneExample.css"
+    },
+    fraude:{
+        description:{
+            context: 'Tras pasar por el séptimo círculo Dantes se adentra en el octavo círculo del Infierno, conocido como el "Malebolge". Este círculo está dividido en diez fosas, cada una destinada a diferentes formas de fraude. Cada castigo se encuentra dividido por los diferentes tipos de fraude, como la hipocresía, el engaño, la seducción, la corrupción política y religiosa, entre otros. Cada fosa está reservada para un tipo específico de fraude y tiene su propio castigo particular.',
+            text: '¿Cómo se castigan los actos de fraude en los diferentes círculos del Infierno según la visión de Dante?',
+            time: 0.5
+        },
+        imgUrl:"../assets/img/nivel 8.jpg",
+        decisions:[
+            {description: "Hay diez fosos que albergan a diferentes tipos de fraudulentos", next:"traicion"},
+            {description: "Los fraudulentos son redimidos y perdonados, ya que se considera que su comportamiento deshonesto fue producto de circunstancias difíciles", type: decisionType.decreaseLife, appear: true},
+        ],
+        styles: "sceneExample.css"
+    },
+    traicion:{
+        description:{
+            context: 'Al llegar al último círculo Dantes se encuentra ante un lugar conocido como el "Traidores". Este círculo está dividido en cuatro fosas concéntricas, cada una destinada a diferentes tipos de traición. En este noveno círculo, se encuentran diferentes formas de traición, como la traición política, la traición a la familia, la traición a los huéspedes y la traición a los benefactores. Cada fosa tiene su propio castigo específico para cada tipo de traición',
+            text: '¿Cuáles son las diferentes formas de traición que Dante encuentra a lo largo de su viaje en la obra?',
+            time: 0.5
+        },
+        imgUrl:"../assets/img/nivel 9.jpg",
+        decisions:[
+            {description: 'Dante encuentra diferentes formas de traición, que incluyen la traición política, la traición familiar y la traición religiosa', next:"start"},
+            {description: 'Dante solo encuentra una forma de traición', type: decisionType.decreaseLife, appear: false}
+        ],
+        styles: "sceneExample.css"
     },
     gameover: {
         description: {
