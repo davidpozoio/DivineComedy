@@ -2,7 +2,7 @@
 .scene__text{
     text-align: center;
 }
-.scene__description{
+.description__text{
     display: flex;
     text-align: center;
     justify-content: center;
