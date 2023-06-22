@@ -1,7 +1,11 @@
 @import url("./sceneExample.css");
-
-.scene__description{
+.scene__text{
     text-align: center;
+}
+.scene__description{
+    display: flex;
+    text-align: center;
+    justify-content: center;
     color: red;
     font-weight: bold;
 }
