@@ -4,40 +4,40 @@ import { hiddenDecisions } from "./load-functions/decision.js";
 import { scenes } from "./data/scenesData.js";
 import { loadLife } from "./load-functions/loadLife.js";
 import { decisionTypeFunction } from "./data/decisionTypeData.js";
-import { audioController } from "./audioController/audioController.js";
-import { audioData } from "./data/audioData.js";
+import { audioController } from "./audio-controller/audioController.js";
+import { sceneThemes } from "./data/sceneThemes.js";
 import {
   playClickAudio,
   playHoverAudio,
   playSceneTheme,
-} from "./audioController/playAudio.js";
+} from "./audio-controller/playAudio.js";
 import { loadImages } from "./load-functions/load-images/loadImages.js";
-import { toogleAudio } from "./audioController/toogleAudio.js";
+import { toogleAudio } from "./audio-controller/toogleAudio.js";
 
 sceneDom.$decisionsContainer.addEventListener("click", (e) => {
-  let button = e.target;
-  let buttonType = e.target.dataset.type;
+  let decision = e.target;
+  let decisionType = e.target.dataset.type;
 
-  if (button.id != "decisions") {
+  if  (decision.id != "decisions") {
     playClickAudio(audioController);
   }
 
-  playSceneTheme(audioData[button.dataset.next], audioController);
+  playSceneTheme(sceneThemes [decision.dataset.next], audioController);
 
-  if (buttonType in decisionTypeFunction) {
-    decisionTypeFunction[buttonType]();
+  if (decisionType in decisionTypeFunction) {
+    decisionTypeFunction[decisionType]();
   }
 
   scenes[nameScene.actual].decisions = hiddenDecisions(
-    button,
+   decision,
     scenes[nameScene.actual]
   );
 
   loadLife(health, sceneDom, () => loadScene(scenes["gameover"], sceneDom));
 
-  if (e.target.id != "decisions" && button.dataset.next in scenes) {
-    nameScene.actual = button.dataset.next;
-    loadScene(scenes[button.dataset.next], sceneDom);
+  if (e.target.id != "decisions" && decision.dataset.next in scenes) {
+    nameScene.actual = decision.dataset.next;
+    loadScene(scenes [decision.dataset.next], sceneDom);
   }
 });
 

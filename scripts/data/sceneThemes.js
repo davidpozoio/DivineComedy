@@ -7,7 +7,7 @@
  * }
  */
 
-export const audioData = {
+export const sceneThemes = {
     intro: {
         audioSource: "../assets/audio/soundtrack/abadiaIncio.mp3",
         loop: true,

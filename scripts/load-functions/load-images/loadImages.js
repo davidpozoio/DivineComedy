@@ -8,18 +8,17 @@ export function loadImages(scenes, { $loadingBar }) {
     let percentageAmount = 100 / Object.values(scenes).length;
 
     Object.values(scenes).forEach((value, index) => {
-      images.push({ url: value.imgUrl, loaded: false, img: new Image() });
-      images[index].img.src = images[index].url;
+      images.push({ loaded: false, img: new Image() });
+      images[index].img.src = value.imgUrl;
 
       images[index].img.onload = () => {
         images[index].loaded = true;
         percentageBar += percentageAmount;
         increaseAmounInBar($loadingBar, percentageBar);
       };
-      
+
       images[index].img.onerror = () => {
-        images[index].url = "../assets/img-backgrounds/noImage.jpeg";
-        images[index].img.src = images[index].url;
+        images[index].img.src = "../assets/img-backgrounds/noImage.jpeg";
       };
     });
 
@@ -30,6 +29,7 @@ export function loadImages(scenes, { $loadingBar }) {
       console.log("loading...");
       await delay(0.5);
     }
+    console.log("loading complete!");
 
     updateImgUrls(scenes, images);
 
@@ -41,7 +41,7 @@ export function updateImgUrls(scenes, imageUrls) {
   let i = 0;
 
   for (let key in scenes) {
-    scenes[key].imgUrl = imageUrls[i].url;
+    scenes[key].imgUrl = imageUrls[i].img.src;
     i++;
   }
 }

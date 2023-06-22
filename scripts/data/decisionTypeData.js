@@ -1,5 +1,5 @@
-import { audioController } from "../audioController/audioController.js";
-import { playDamageAudio } from "../audioController/playAudio.js";
+import { audioController } from "../audio-controller/audioController.js";
+import { playDamageAudio } from "../audio-controller/playAudio.js";
 import { decreaseLife, increaseLife } from "../load-functions/loadLife.js";
 import { health } from "./scene.js";
 
