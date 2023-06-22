@@ -1,3 +1,5 @@
+import { audioController } from "../audioController/audioController.js";
+import { playDamageAudio } from "../audioController/playAudio.js";
 import { decreaseLife, increaseLife } from "../load-functions/loadLife.js";
 import { health } from "./scene.js";
 
@@ -18,7 +20,7 @@ export const decisionType = {
   reload: "reload",
   noLifePoints: "noLifePoints",
   withLifePoints: "withLifePoints",
-  toggleLife: "toggleLife",
+  toggleLife: "toggleLife"
 };
 
 export const decisionTypeFunction = {
@@ -26,6 +28,7 @@ export const decisionTypeFunction = {
     health.lifePoints = increaseLife(health);
   },
   [decisionType.decreaseLife]: () => {
+    playDamageAudio(audioController);
     health.lifePoints = decreaseLife(health);
   },
   [decisionType.reload]: () => {
@@ -39,5 +42,5 @@ export const decisionTypeFunction = {
   },
   [decisionType.toggleLife]: () => {
     health.active = !health.active;
-  },
+  }
 };

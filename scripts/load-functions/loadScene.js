@@ -19,7 +19,7 @@ export function loadScene(
   $sceneImg.onload = () => {
     loadSceneStyles(styles, sceneDom);
     $sceneTitle.innerHTML = title;
-    loadDescription(description, sceneDom, true).then(() => {
+    loadDescription(description, sceneDom, false).then(() => {
       loadDecisions(decisions, sceneDom);
     });
   };

@@ -12,6 +12,7 @@ import {
   playSceneTheme,
 } from "./audioController/playAudio.js";
 import { loadImages } from "./load-functions/load-images/loadImages.js";
+import { toogleAudio } from "./audioController/toogleAudio.js";
 
 sceneDom.$decisionsContainer.addEventListener("click", (e) => {
   let button = e.target;
@@ -23,7 +24,7 @@ sceneDom.$decisionsContainer.addEventListener("click", (e) => {
 
   playSceneTheme(audioData[button.dataset.next], audioController);
 
-  if (decisionTypeFunction.hasOwnProperty(buttonType)){
+  if (buttonType in decisionTypeFunction) {
     decisionTypeFunction[buttonType]();
   }
 
@@ -34,10 +35,7 @@ sceneDom.$decisionsContainer.addEventListener("click", (e) => {
 
   loadLife(health, sceneDom, () => loadScene(scenes["gameover"], sceneDom));
 
-  if (
-    e.target.id != "decisions" &&
-    scenes.hasOwnProperty(button.dataset.next)
-  ) {
+  if (e.target.id != "decisions" && button.dataset.next in scenes) {
     nameScene.actual = button.dataset.next;
     loadScene(scenes[button.dataset.next], sceneDom);
   }
@@ -49,9 +47,14 @@ sceneDom.$decisionsContainer.addEventListener("mouseover", (e) => {
   }
 });
 
+sceneDom.$toogleAudio.addEventListener("click", (e) => {
+  if(toogleAudio(audioController)){
+    e.target.src = "./assets/icons/playing.jpg"
+  }else{
+    e.target.src = "./assets/icons/muted.jpg"
+  }
+});
 
-loadImages(scenes, sceneDom)
-  .then(()=>{
-    loadScene(scenes["start"], sceneDom);
-  });
-
+loadImages(scenes, sceneDom).then(() => {
+  loadScene(scenes[nameScene.actual], sceneDom);
+});

@@ -10,11 +10,13 @@ export function loadImages(scenes, { $loadingBar }) {
     Object.values(scenes).forEach((value, index) => {
       images.push({ url: value.imgUrl, loaded: false, img: new Image() });
       images[index].img.src = images[index].url;
+
       images[index].img.onload = () => {
         images[index].loaded = true;
         percentageBar += percentageAmount;
         increaseAmounInBar($loadingBar, percentageBar);
       };
+      
       images[index].img.onerror = () => {
         images[index].url = "../assets/img-backgrounds/noImage.jpeg";
         images[index].img.src = images[index].url;
