@@ -1,38 +1,47 @@
 export function playSceneTheme(sceneAudio, audioController) {
   if (!sceneAudio) return new Error("no audio in this scene");
+
+  const actualPlayingAudio = audioController.actualPlayingAudio;
+
   let nameAudioSource = sceneAudio.audioSource.split("/");
   nameAudioSource = nameAudioSource[nameAudioSource.length - 1];
 
-  let nameAudioController = audioController.actualPlayingAudio.src.split("/");
+  let nameAudioController = actualPlayingAudio.src.split("/");
   nameAudioController = nameAudioController[nameAudioController.length - 1];
 
   if (nameAudioController != nameAudioSource) {
-    audioController.actualPlayingAudio.src = sceneAudio.audioSource;
-    audioController.actualPlayingAudio.loop = sceneAudio.loop;
-    audioController.actualPlayingAudio.volume = audioController.active
+    actualPlayingAudio.src = sceneAudio.audioSource;
+    actualPlayingAudio.loop = sceneAudio.loop;
+    actualPlayingAudio.volume = audioController.active
       ? sceneAudio.volume
       : 0;
     audioController.actualVolume = sceneAudio.volume;
-    audioController.actualPlayingAudio.play();
+    actualPlayingAudio.play();
   }
 }
 
 export function playClickAudio(audioController) {
+  const clickAudio = audioController.clickAudio;
+
   if (audioController.active) {
-    audioController.clickAudio.play();
+    clickAudio.play();
   }
 }
 
 export function playHoverAudio(audioController) {
+  let hoverAudio = audioController.hoverAudio;
+
   if (audioController.active) {
-    audioController.hoverAudio = new Audio(audioController.hoverAudio.src);
-    audioController.hoverAudio.play();
+    hoverAudio = new Audio(hoverAudio.src);
+    hoverAudio.play();
   }
 }
 
 export function playDamageAudio(audioController) {
+  let damageAudio = audioController.damageAudio;
+
   if (audioController.active) {
-    audioController.damageAudio = new Audio(audioController.damageAudio.src);
-    audioController.damageAudio.play();
+    damageAudio = new Audio(damageAudio.src);
+    damageAudio.play();
   }
 }

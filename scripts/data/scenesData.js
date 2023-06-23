@@ -22,6 +22,7 @@ import { decisionType } from "./decisionTypeData.js"
  * }
  */
 
+export const firstSceneName = 'start';
 
 export const scenes = {
     start:{
@@ -148,7 +149,7 @@ export const scenes = {
         imgUrl: "../assets/img/nivel 6.jpg",
         decisions: [
             {description: "Aquellos acusados de herejía podrían enfrentar diversas consecuencias", next: "violencia"},
-            {description: "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa", type: decisionType.decreaseLife, appear: false},
+            {description: "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa", type: decisionType.decreaseLife, appear: true},
         ],
         styles: "sceneExample.css"
     },
@@ -161,7 +162,7 @@ export const scenes = {
         imgUrl: "../assets/img/nivel 7.jpg",
         decisions: [
             {description: "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral", next: "fraude"},
-            {description: "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas", type: decisionType.decreaseLife, appear: false},
+            {description: "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas", type: decisionType.decreaseLife, appear: true},
         ],
         styles: "sceneExample.css"
     },
@@ -187,7 +188,7 @@ export const scenes = {
         imgUrl:"../assets/img/nivel 9.jpg",
         decisions:[
             {description: 'Dante encuentra diferentes formas de traición, que incluyen la traición política, la traición familiar y la traición religiosa', next:"start"},
-            {description: 'Dante solo encuentra una forma de traición', type: decisionType.decreaseLife, appear: false}
+            {description: 'Dante solo encuentra una forma de traición', type: decisionType.decreaseLife, appear: true}
         ],
         styles: "sceneExample.css"
     },

@@ -29,9 +29,9 @@ function getAllDecisions(decisions) {
     $button.id = id;
     id++;
 
-    if (decision.hasOwnProperty("next")) $button.dataset.next = decision.next;
-    if (decision.hasOwnProperty("type")) $button.dataset.type = decision.type;
-    if (decision.hasOwnProperty("appear"))
+    if ("next" in decision) $button.dataset.next = decision.next;
+    if ("type" in decision) $button.dataset.type = decision.type;
+    if ("appear" in decision)
       $button.dataset.appear = decision.appear;
     if (decision.appear == false) $button.hidden = true;
 

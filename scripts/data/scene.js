@@ -1,6 +1,8 @@
+import { firstSceneName } from "./scenesData.js";
+
 export const $game = document.querySelector(".game");
 export const nameScene = {
-  actual: 'start'
+  actual: firstSceneName
 };
 export const health = {
   lifePoints: 3,
