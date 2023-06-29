@@ -16,7 +16,16 @@
 
 .scene__title{
     color: white;
+    display: none;
 }
+
+.life {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+}
+
 /* textos  */
 .description{
     display: block;
