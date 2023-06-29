@@ -35,7 +35,7 @@ export const scenes = {
             {description: 'quitar vida', type: decisionType.decreaseLife}
             
         ],
-        styles: "sceneExample.css"
+        styles: "start.css"
     },
     intro:{
         description: {
@@ -102,7 +102,7 @@ export const scenes = {
             {description: "Quiero ayudarlos", type: decisionType.decreaseLife, appear: true},
             {description: "Vamonos de aqui", type: decisionType.decreaseLife, appear: true},
         ],
-        styles: "sceneExample.css"
+        styles: "gula.css"
     },
      avaricia:{
         title:'Avaricia',

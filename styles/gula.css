@@ -1,0 +1,11 @@
+@import url("./sceneExample.css");
+
+.decisions {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 100px;
+    margin-top: 550px;
+    
+}
