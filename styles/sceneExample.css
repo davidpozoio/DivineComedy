@@ -13,7 +13,19 @@ body{
     align-items: center;
     justify-content: center;
 
+    box-shadow: 100px 100px 100px inset red, -100px -100px 100px inset red;
+    animation: damageAnimation 1s infinite alternate-reverse; 
     overflow: hidden;
+}
+
+@keyframes damageAnimation {
+    0%{
+        box-shadow: 0px 0px 100px inset red, 0px 0px 100px inset red; 
+    }
+
+    100%{
+        box-shadow: 100px 100px 100px inset red, -100px -100px 100px inset red;
+    }
 }
 
 .scene__title{
