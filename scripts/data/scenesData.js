@@ -133,7 +133,7 @@ export const scenes = {
             {description: "Son sometidos a un fuego eterno.", type: decisionType.decreaseLife, appear: false},
             {description: "Se enfrentan entre sí.", type: decisionType.decreaseLife, appear: true},
         ],
-        styles: "sceneExample.css"
+        styles: "gula.css"
     },
 
     herejia:{
