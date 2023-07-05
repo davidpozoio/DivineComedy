@@ -1,6 +1,8 @@
+import { firstSceneName } from "./scenesData.js";
+
 export const $game = document.querySelector(".game");
 export const nameScene = {
-  actual: 'start'
+  actual: firstSceneName
 };
 export const health = {
   lifePoints: 3,
@@ -13,11 +15,13 @@ export const health = {
 
 export const sceneDom = {
   $link: document.querySelector("link"),
+  $loadingBar: document.querySelector(".loading__bar"),
   $sceneImg: document.querySelector(".scene__img"),
-  $decisionsContainer: document.querySelector(".decisions"),
+  $toogleAudio: document.querySelector(".toogle-audio"),
   $sceneTitle: document.querySelector(".scene__title"),
+  $textLife: document.querySelector('.life'),
   $sceneDescription: document.querySelector(".description"),
   $sceneText: document.querySelector(".description__text"),
   $sceneContext: document.querySelector(".description__context"),
-  $textLife: document.querySelector('.life')
+  $decisionsContainer: document.querySelector(".decisions"),
 };

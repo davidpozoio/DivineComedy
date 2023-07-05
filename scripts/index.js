@@ -1,54 +1,28 @@
-import { sceneDom, health, nameScene } from "./data/scene.js";
-import { loadDecisions, hiddenDecisions } from "./load-functions/decision.js";
+import { sceneDom, nameScene } from "./data/scene.js";
+import { loadScene } from "./load-functions/loadScene.js";
 import { scenes } from "./data/scenesData.js";
-import { loadSceneStyles } from "./load-functions/loadSceneStyles.js";
-import { loadLife } from "./load-functions/loadLife.js";
-import { decisionTypeFunction } from "./data/decisionTypeData.js";
-import { loadDescription} from "./load-functions/loadDescription.js";
+import { audioController } from "./audio-controller/audioController.js";
+import { playHoverAudio } from "./audio-controller/playAudio.js";
+import { loadImages } from "./load-functions/load-images/loadImages.js";
+import { toogleAudio } from "./audio-controller/toogleAudio.js";
+import { handleDecisionsClick } from "./event-functions/handleDecisionsClick.js";
 
-function loadScene({ title="", description, imgUrl="../assets/img-backgrounds/noImage.jpeg", decisions, styles }, sceneDom) {
-  const { $sceneImg, $sceneTitle } = sceneDom;
+sceneDom.$decisionsContainer.addEventListener("click", handleDecisionsClick);
 
-  $sceneImg.src = imgUrl;
-
-  $sceneImg.onload = () => {
-    loadSceneStyles(styles, sceneDom);
-    $sceneTitle.innerHTML = title;
-    loadDescription(description, sceneDom, true).then(() => {
-      loadDecisions(decisions, sceneDom);
-    });
-  };
-
-  $sceneImg.onerror = ()=>{
-    $sceneImg.src = "../assets/img-backgrounds/noImage.jpeg";
-    console.log("link no válido");
-  }
-}
-
-sceneDom.$decisionsContainer.addEventListener("click", (e) => {
-  let button = e.target;
-  let buttonType = e.target.dataset.type;
-
-  if (decisionTypeFunction.hasOwnProperty(buttonType))
-    decisionTypeFunction[buttonType]();
-
-  scenes[nameScene.actual].decisions = hiddenDecisions(
-    button,
-    scenes[nameScene.actual]
-  );
-
-  loadLife(health, sceneDom);
-  if (health.lifePoints == health.minLife && health.active) {
-    loadScene(scenes["gameover"], sceneDom);
-  }
-
-  if (
-    e.target.id != "decisions" &&
-    scenes.hasOwnProperty(button.dataset.next)
-  ) {
-    nameScene.actual = button.dataset.next;
-    loadScene(scenes[button.dataset.next], sceneDom);
+sceneDom.$decisionsContainer.addEventListener("mouseover", (e) => {
+  if (e.target.id != "decisions") {
+    playHoverAudio(audioController);
   }
 });
 
-loadScene(scenes["start"], sceneDom);
+sceneDom.$toogleAudio.addEventListener("click", (e) => {
+  if (toogleAudio(audioController)) {
+    e.target.src = "./assets/icons/playing.jpg";
+  } else {
+    e.target.src = "./assets/icons/muted.jpg";
+  }
+});
+
+loadImages(scenes, sceneDom).then(() => {
+  loadScene(scenes[nameScene.actual], sceneDom);
+});
