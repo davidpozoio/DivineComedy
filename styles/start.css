@@ -77,11 +77,18 @@
    
 }
 
-button{
+.decisions__button{
     display: block;
     margin-top: 10px;
     border: 0;
     border-bottom: 5px solid rgb(0, 0, 0);
 }
 
+.toogle-audio{
+    width: 100px;
+}
+
+.toogle-audio__img{
+    width: 50px;
+}
 
