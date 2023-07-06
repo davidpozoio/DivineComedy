@@ -1,5 +1,6 @@
 export function playSceneTheme(sceneAudio, audioController) {
   if (!sceneAudio) return new Error("no audio in this scene");
+  const actualPlayingAudio = audioController.actualPlayingAudio;
 
   if (!isTheSameAudio(sceneAudio, audioController)) {
     actualPlayingAudio.src = sceneAudio.audioSource;
