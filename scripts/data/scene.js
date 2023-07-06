@@ -17,7 +17,7 @@ export const sceneDom = {
   $link: document.querySelector("link"),
   $style: document.querySelector(".style"),
   $loadingBar: document.querySelector(".loading__bar"),
-  $scene: document.querySelector("#sce"),
+  $scene: document.querySelector(".scene"),
   $sceneImg: document.querySelector(".scene__img"),
   $toogleAudio: document.querySelector(".toogle-audio"),
   $sceneTitle: document.querySelector(".scene__title"),

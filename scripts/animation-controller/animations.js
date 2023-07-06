@@ -2,7 +2,7 @@ export const animations = [
   {
     name: "damage",
     css: "",
-    link: "../styles/animations/damageAnimation.css",
+    link: "../../styles/animations/damageAnimation.css",
   },
   {
     name: 'dark',

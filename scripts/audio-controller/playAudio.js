@@ -1,15 +1,7 @@
 export function playSceneTheme(sceneAudio, audioController) {
   if (!sceneAudio) return new Error("no audio in this scene");
 
-  const actualPlayingAudio = audioController.actualPlayingAudio;
-
-  let nameAudioSource = sceneAudio.audioSource.split("/");
-  nameAudioSource = nameAudioSource[nameAudioSource.length - 1];
-
-  let nameAudioController = actualPlayingAudio.src.split("/");
-  nameAudioController = nameAudioController[nameAudioController.length - 1];
-
-  if (nameAudioController != nameAudioSource) {
+  if (!isTheSameAudio(sceneAudio, audioController)) {
     actualPlayingAudio.src = sceneAudio.audioSource;
     actualPlayingAudio.loop = sceneAudio.loop;
     actualPlayingAudio.volume = audioController.active
@@ -18,6 +10,17 @@ export function playSceneTheme(sceneAudio, audioController) {
     audioController.actualVolume = sceneAudio.volume;
     actualPlayingAudio.play();
   }
+}
+
+function isTheSameAudio({audioSource}, {actualPlayingAudio}){
+  let nameAudioSource = audioSource.split('/');
+  nameAudioSource = nameAudioSource[nameAudioSource.length - 1];
+
+  let nameAudioController = actualPlayingAudio.src.split('/');
+  nameAudioController = nameAudioController[nameAudioController.length - 1];
+
+  return (nameAudioSource == nameAudioController);
+
 }
 
 export function playClickAudio(audioController) {

@@ -1,3 +1,15 @@
-*{
-    width: 0px;
+.scene{
+    box-shadow: 0px 0px 0px inset red, 0px 0px 0px inset red;
+    animation: damageAnimation 0.5s alternate-reverse ; 
+    overflow: hidden;
+}
+
+@keyframes damageAnimation {
+    0%{
+        box-shadow: 0px 0px 0px inset rgb(241, 225, 0), 0px 0px 0px inset rgb(241, 225, 0); 
+    }
+
+    100%{
+        box-shadow: 100px 100px 100px inset red, -100px -100px 100px inset red;
+    }
 }

@@ -6,7 +6,7 @@ import { playHoverAudio } from "./audio-controller/playAudio.js";
 import { loadImages } from "./load-functions/load-images/loadImages.js";
 import { toogleAudio } from "./audio-controller/toogleAudio.js";
 import { handleDecisionsClick } from "./event-functions/handleDecisionsClick.js";
-import { loadAllAnimations} from "./animation-controller/animation-functions.js";
+import { loadAllAnimations } from "./animation-controller/animation-functions.js";
 import { animations } from "./animation-controller/animations.js";
 
 sceneDom.$decisionsContainer.addEventListener("click", handleDecisionsClick);
@@ -25,9 +25,6 @@ sceneDom.$toogleAudio.addEventListener("click", (e) => {
   }
 });
 
-loadAllAnimations(animations).then(()=>{
-  console.log(animations);
-  return loadImages(scenes, sceneDom)
-}).then(()=>{
-  loadScene(scenes[nameScene.actual], sceneDom);
-})
+loadAllAnimations(animations)
+  .then(() => loadImages(scenes, sceneDom))
+  .then(() => loadScene(scenes[nameScene.actual], sceneDom));
