@@ -1,7 +1,9 @@
+import { playAnimation } from "../animation-controller/animation-functions.js";
+import { animations } from "../animation-controller/animations.js";
 import { audioController } from "../audio-controller/audioController.js";
 import { playDamageAudio } from "../audio-controller/playAudio.js";
 import { decreaseLife, increaseLife } from "../load-functions/loadLife.js";
-import { health } from "./scene.js";
+import { health, sceneDom } from "./scene.js";
 
 /**
  * TYPES OF A DECISION
@@ -28,6 +30,7 @@ export const decisionTypeFunction = {
     health.lifePoints = increaseLife(health);
   },
   [decisionType.decreaseLife]: () => {
+    playAnimation(animations[0].css, sceneDom);
     playDamageAudio(audioController);
     health.lifePoints = decreaseLife(health);
   },
