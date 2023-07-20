@@ -9,3 +9,13 @@
     color: red;
     font-weight: bold;
 }
+
+.decisions{
+    display: flex;
+    justify-content: center;
+}
+.decisions__button{
+    margin: 0;
+    padding: 0;
+}
+

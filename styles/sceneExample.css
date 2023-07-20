@@ -1,3 +1,4 @@
+@import url("./button_audio.css");
 *{
     margin: 0;
     width: 100%;
@@ -86,10 +87,6 @@ body{
     margin-top: 10px;
     border: 0;
     border-bottom: 5px solid red;
-}
-
-.toogle-audio{
-    width: 100px;
 }
 
 .toogle-audio__img{
