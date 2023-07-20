@@ -13,7 +13,7 @@ export const traicion = {
     {
       description:
         "Dante encuentra diferentes formas de traición, que incluyen la traición política, la traición familiar y la traición religiosa",
-      next: "start",
+      next: "final",
     },
     {
       description: "Dante solo encuentra una forma de traición",

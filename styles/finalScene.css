@@ -1,0 +1,39 @@
+@import url("./sceneExample.css");
+
+.scene{
+    overflow: hidden;
+}
+
+.description{
+    display: grid;
+    justify-content: center;
+
+}
+.description__context{
+    top: 100%;
+    left: calc(50% - 350px);
+    position: fixed;
+
+    width: 700px;
+    animation: up-transition 40s linear forwards;
+}
+
+.toogle-audio{
+    display: none;
+}
+.life{
+    display: none;
+}
+
+.decisions__button{
+    margin: 0;
+}
+
+@keyframes up-transition {
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: -200%;
+    }
+}

@@ -10,6 +10,7 @@ import { violencia } from "./levels/violencia.js";
 import { fraude } from "./levels/fraude.js";
 import { traicion } from "./levels/traicion.js";
 import { gameover } from "./levels/gameover.js";
+import { final } from "./levels/final.js";
 /**
  * STRUCTURE OF A SCENE
  * sceneName: {
@@ -47,4 +48,5 @@ export const scenes = {
   fraude,
   traicion,
   gameover,
+  final
 };

@@ -5,6 +5,10 @@ export function delay(time) {
 }
 
 export function typeEffect(text, time, domObject) {
+  if(time == 0){
+    domObject.innerHTML = text;
+    return;
+  }
   return new Promise(async (resolve) => {
     let timePerChar = time / text.length;
 
