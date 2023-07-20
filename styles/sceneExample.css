@@ -15,6 +15,21 @@ body{
     justify-content: center;
 }
 
+.heart{
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    animation: throb 0.5s infinite alternate-reverse;
+}
+@keyframes throb {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
 .scene__title{
     color: white;
     display: none;

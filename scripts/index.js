@@ -1,4 +1,4 @@
-import { sceneDom, nameScene } from "./data/scene.js";
+import { sceneDom, nameScene, health } from "./data/scene.js";
 import { loadScene } from "./load-functions/loadScene.js";
 import { scenes } from "./data/scenesData.js";
 import { audioController } from "./audio-controller/audioController.js";
@@ -8,6 +8,7 @@ import { toogleAudio } from "./audio-controller/toogleAudio.js";
 import { handleDecisionsClick } from "./event-functions/handleDecisionsClick.js";
 import { loadAllAnimations } from "./animation-controller/animation-functions.js";
 import { animations } from "./animation-controller/animations.js";
+import { loadLife } from "./load-functions/loadLife.js";
 
 sceneDom.$decisionsContainer.addEventListener("click", handleDecisionsClick);
 
@@ -25,6 +26,11 @@ sceneDom.$toogleAudio.addEventListener("click", (e) => {
   }
 });
 
-loadAllAnimations(animations)
-  .then(() => loadImages(scenes, sceneDom))
-  .then(() => loadScene(scenes[nameScene.actual], sceneDom));
+function main() {
+  loadLife(health, sceneDom, () => loadScene(scenes["gameover"], sceneDom));
+  loadAllAnimations(animations)
+    .then(() => loadImages(scenes, sceneDom))
+    .then(() => loadScene(scenes[nameScene.actual], sceneDom));
+}
+
+main();
