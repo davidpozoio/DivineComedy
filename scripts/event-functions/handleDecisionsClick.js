@@ -31,7 +31,7 @@ export function handleDecisionsClick(e) {
     scenes[nameScene.actual]
   );
 
-  loadLife(health, sceneDom, () => loadScene(scenes["gameover"], sceneDom));
+  updateLife(decision.id, health, sceneDom, () => loadScene(scenes["gameover"], sceneDom));
 
   loadNextScene({
     targetId: decision.id,
@@ -53,5 +53,11 @@ function loadNextScene({ targetId, nextScene, scenes, sceneDom, nameScene }) {
   if (targetId != "decisions" && nextScene in scenes) {
     nameScene.actual = nextScene;
     loadScene(scenes[nextScene], sceneDom);
+  }
+}
+
+function updateLife(targetId, health, sceneDom, gameover){
+  if(targetId != "decisions"){
+    loadLife(health, sceneDom, gameover);
   }
 }
