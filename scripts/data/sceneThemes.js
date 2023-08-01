@@ -9,13 +9,58 @@
 
 export const sceneThemes = {
     intro: {
-        audioSource: "../assets/audio/soundtrack/abadiaIncio.mp3",
+        audioSource: "../assets/audio/soundtrack/intro.mp3",
         loop: true,
-        volume: 0.1
+        volume: 0.5
+    },
+    limbo: {
+        audioSource: "../assets/audio/soundtrack/intro.mp3",
+        loop: true,
+        volume: 0.5
     },
     lujuria: {
-        audioSource: "../assets/audio/soundtrack/Prelude in C minor, BWV 999.mp3",
+        audioSource: "../assets/audio/soundtrack/lujuria.mp3",
         loop: true,
-        volume: 1
+        volume: 0.5
+    },
+    gula:{
+        audioSource: "../assets/audio/soundtrack/gula.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    avaricia: {
+        audioSource: "../assets/audio/soundtrack/intro.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    pereza: {
+        audioSource: "../assets/audio/soundtrack/intro.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    hehejia: {
+        audioSource: "../assets/audio/soundtrack/lujuria.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    violencia:{
+        audioSource: "../assets/audio/soundtrack/gula.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    fraude: {
+        audioSource: "../assets/audio/soundtrack/lujuria.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    traicion:{
+        audioSource: "../assets/audio/soundtrack/gula.mp3",
+        loop: true,
+        volume: 0.5
+    },
+    gameover:{
+        audioSource: "../assets/audio/soundtrack/GameOver.mp3",
+        loop: true,
+        volume: 0.5
     }
 }
