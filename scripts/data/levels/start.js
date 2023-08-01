@@ -5,10 +5,10 @@ export const start = {
   description: {},
   imgUrl: "../assets/img/INICIO.jpg",
   decisions: [
-    { description: "start", next: "intro" },
-    { description: "con vida", type: decisionType.withLifePoints },
-    { description: "sin vidad", type: decisionType.noLifePoints },
-    { description: "quitar vida", type: decisionType.decreaseLife },
+    { description: "START", next: "intro" },
+    { description: "CON VIDA", type: decisionType.withLifePoints },
+    { description: "SIN VIDA", type: decisionType.noLifePoints },
+    { description: "QUITAR VIDA", type: decisionType.decreaseLife },
   ],
   styles: "start.css",
 };
