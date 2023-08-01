@@ -11,20 +11,20 @@ export const violencia = {
   decisions: [
     {
       description:
-        "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral",
-      next: "fraude",
-    },
-    {
-      description:
-        "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas",
+      "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas",
       type: decisionType.decreaseLife,
       appear: false,
     },
     {
       description:
-        "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas",
+      "Dante encuentra principalmente formas de violencia física, como asesinatos y torturas extremas",
       type: decisionType.decreaseLife,
       appear: true,
+    },
+    {
+      description:
+        "Dante encuentra diversas formas de violencia, que incluyen la violencia física, la violencia política y la violencia moral",
+      next: "fraude",
     },
   ],
   styles: "sceneExample.css",

@@ -15,7 +15,7 @@
     position: fixed;
 
     width: 700px;
-    animation: up-transition 40s linear forwards;
+    animation: up-transition 100s linear forwards;
 }
 
 .toogle-audio{

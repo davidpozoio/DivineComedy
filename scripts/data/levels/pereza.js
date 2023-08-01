@@ -10,11 +10,6 @@ export const pereza = {
   imgUrl: "../assets/img/nivel 5.jpg",
   decisions: [
     {
-      description:
-        "Son sumergidos en un pantano de lodo y se enfrentan entre sí.",
-      next: "herejia",
-    },
-    {
       description: "Son congelados en el lago Cocito.",
       type: decisionType.decreaseLife,
       appear: false,
@@ -23,6 +18,11 @@ export const pereza = {
       description: "Son sometidos a un fuego eterno.",
       type: decisionType.decreaseLife,
       appear: false,
+    },
+    {
+      description:
+        "Son sumergidos en un pantano de lodo y se enfrentan entre sí.",
+      next: "herejia",
     },
     {
       description: "Se enfrentan entre sí.",

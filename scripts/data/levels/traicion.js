@@ -11,14 +11,14 @@ export const traicion = {
   imgUrl: "../assets/img/nivel 9.jpg",
   decisions: [
     {
-      description:
-        "Dante encuentra diferentes formas de traición, que incluyen la traición política, la traición familiar y la traición religiosa",
-      next: "final",
-    },
-    {
       description: "Dante solo encuentra una forma de traición",
       type: decisionType.decreaseLife,
       appear: false,
+    },
+    {
+      description:
+        "Dante encuentra diferentes formas de traición, que incluyen la traición política, la traición familiar y la traición religiosa",
+      next: "final",
     },
     {
       description: "Dante solo encuentra una forma de traición",

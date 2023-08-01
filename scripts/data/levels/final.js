@@ -1,9 +1,12 @@
 export const final = {
     description: {
-        context: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate varius efficitur. Suspendisse malesuada, risus et congue suscipit, arcu lectus laoreet nibh, nec viverra urna nisi eget justo. Vestibulum vel leo at eros rutrum cursus. Aliquam sollicitudin at libero sed commodo. Suspendisse justo orci, feugiat et nunc consectetur, efficitur scelerisque lectus. Cras non leo mi. Praesent eget purus a lectus blandit eleifend non a nisl. Sed mauris nibh, bibendum quis dictum vitae, tempus et ipsum. Ut non scelerisque nisl. Nam convallis lacinia enim. Aenean commodo vitae eros vulputate interdum.`,
-        time: 20
+        context: `Tras haber superado los nueve círculos del infierno, Dantes finalmente alcanzó la salida y se encontró frente a las imponentes puertas del Purgatorio. Allí, pudo vislumbrar su próximo destino en esta travesía espiritual. A lo lejos, las puertas se alzaban majestuosas, anunciando un nuevo capítulo en su viaje hacia la redención y la purificación.
+        Virgilio, su guía hasta ese momento, miró a Dantes con una expresión llena de afecto y sabiduría. "Este es el fin de mi camino", le dijo con voz serena, "pero el tuyo apenas comienza.
+        CONTINUARÁ...`
+        ,
+        time: 60
     },
-    imgUrl: "../assets/img/final.jpg",
+    imgUrl: "../assets/img/purgatorio.jpg",
     decisions: [
       {
         description:

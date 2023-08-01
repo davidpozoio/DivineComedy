@@ -18,20 +18,20 @@ export const herejia = {
   decisions: [
     {
       description:
-        "Aquellos acusados de herejía podrían enfrentar diversas consecuencias",
-      next: "violencia",
-    },
-    {
-      description:
-        "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa",
+      "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa",
       type: decisionType.decreaseLife,
       appear: false,
     },
     {
       description:
-        "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa",
+      "La Iglesia no toma medidas enérgicas contra los herejes Y los acepta dentro de su comunidad religiosa",
       type: decisionType.decreaseLife,
       appear: true,
+    },
+    {
+      description:
+        "Aquellos acusados de herejía podrían enfrentar diversas consecuencias",
+      next: "violencia",
     },
   ],
   styles: "sceneExample.css",
