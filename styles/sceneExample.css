@@ -2,9 +2,13 @@
 *{
     margin: 0;
     width: 100%;
+    font-family: 'Handjet', cursive;
+    font-family: 'Krub', sans-serif;
 }
 body{
     background-color: black;
+    font-family: 'Handjet', cursive;
+    font-family: 'Krub', sans-serif;
 }
 
 .scene{
@@ -14,6 +18,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Handjet', cursive;
+    font-family: 'Krub', sans-serif;
 }
 
 .scene__title{
