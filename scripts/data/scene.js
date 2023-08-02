@@ -20,6 +20,7 @@ export const sceneDom = {
   $scene: document.querySelector(".scene"),
   $sceneImg: document.querySelector(".scene__img"),
   $toogleAudio: document.querySelector(".toogle-audio"),
+  $toogleAudioImg: document.querySelector('.toogle-audio__img'),
   $sceneTitle: document.querySelector(".scene__title"),
   $life: document.querySelector('.life'),
   $heartImg: document.querySelector('.heart'),

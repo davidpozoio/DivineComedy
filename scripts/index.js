@@ -20,9 +20,9 @@ sceneDom.$decisionsContainer.addEventListener("mouseover", (e) => {
 
 sceneDom.$toogleAudio.addEventListener("click", (e) => {
   if (toogleAudio(audioController)) {
-    e.target.src = "./assets/icons/playing.jpg";
+    sceneDom.$toogleAudioImg.src = "./assets/icons/playing.jpg";
   } else {
-    e.target.src = "./assets/icons/muted.jpg";
+    sceneDom.$toogleAudioImg.src = "./assets/icons/muted.jpg";
   }
 });
 
