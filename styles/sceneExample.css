@@ -69,6 +69,15 @@ body{
 
 .description__context{
     color: red;
+    background-color: #0c0e10b3;
+    padding: 20px;
+    border-radius: 20px;
+}
+.description__text{
+    margin-top: 10px;
+    background-color: #0c0e10b3;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .scene__img{
@@ -122,7 +131,7 @@ button,
 button::after {
  padding: 16px 20px;
  font-size: 18px;
- background: linear-gradient(45deg, transparent 5%, red 5%);
+ background: linear-gradient(45deg, transparent 5%, black 5%);
  border: 0;
  color: #fff;
  letter-spacing: 3px;
@@ -146,7 +155,7 @@ button::after {
  left: 0;
  right: 0;
  bottom: 0;
- background: linear-gradient(45deg, transparent 3%, #A6ACAF 3%, #A6ACAF 5%, red 5%);
+ background: linear-gradient(45deg, transparent 3%, #A6ACAF 3%, #A6ACAF 5%, #616A6B 5%);
  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #A6ACAF;
  clip-path: var(--slice-0);
 }

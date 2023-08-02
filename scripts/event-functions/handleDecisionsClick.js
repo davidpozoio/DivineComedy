@@ -31,7 +31,10 @@ export function handleDecisionsClick(e) {
     scenes[nameScene.actual]
   );
 
-  updateLife(decision.id, health, sceneDom, () => loadScene(scenes["gameover"], sceneDom));
+  updateLife(decision.id, health, sceneDom, () =>{
+    playSceneTheme(sceneThemes["gameover"], audioController)
+    loadScene(scenes["gameover"], sceneDom)
+  });
 
   loadNextScene({
     targetId: decision.id,
