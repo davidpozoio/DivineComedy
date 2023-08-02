@@ -24,8 +24,8 @@ body{
 
 .heart{
     width: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
     animation: throb 0.5s infinite alternate-reverse;
 }
 @keyframes throb {
@@ -44,8 +44,10 @@ body{
 
 .life {
     display: flex;
+    flex-direction: column;
     position: fixed;
-    top: 100px;
+    top: 25%;
+    left: 0;
     justify-content: center;
     font-size: 60px;
     color: rgb(252, 252, 252);

@@ -2,6 +2,10 @@
 .scene__text{
     text-align: center;
 }
+
+.description__context{
+    display: none;
+}
 .description__text{
     display: flex;
     text-align: center;
@@ -9,6 +13,7 @@
     color: red;
     font-weight: bold;
 }
+
 
 .decisions{
     display: flex;

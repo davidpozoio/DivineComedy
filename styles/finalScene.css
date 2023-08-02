@@ -9,13 +9,18 @@
     justify-content: center;
 
 }
+.description__text{
+    display: none;
+}
 .description__context{
     top: 100%;
     left: calc(50% - 350px);
     position: fixed;
 
     width: 700px;
-    animation: up-transition 100s linear forwards;
+
+
+    animation: up-transition 50s linear forwards;
 }
 
 .toogle-audio{

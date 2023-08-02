@@ -4,7 +4,7 @@ export const final = {
         Virgilio, su guía hasta ese momento, miró a Dantes con una expresión llena de afecto y sabiduría. "Este es el fin de mi camino", le dijo con voz serena, "pero el tuyo apenas comienza.
         CONTINUARÁ...`
         ,
-        time: 60
+        time: 19
     },
     imgUrl: "../assets/img/purgatorio.jpg",
     decisions: [
