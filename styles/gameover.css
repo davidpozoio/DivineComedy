@@ -12,6 +12,14 @@
     justify-content: center;
     color: red;
     font-weight: bold;
+    font-size: 100px;
+    background-color: transparent;
+}
+
+@keyframes down-to-up {
+    100% {
+      transform: translateY(10px);
+    }
 }
 
 
@@ -22,5 +30,7 @@
 .decisions__button{
     margin: 0;
     padding: 20px;
+
+    animation: down-to-up .5s infinite alternate-reverse;
 }
 
