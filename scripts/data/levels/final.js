@@ -6,7 +6,7 @@ export const final = {
         ,
         time: 19
     },
-    imgUrl: "../assets/img/purgatorio.jpg",
+    imgUrl: "../assets/img/purgatorio.JPG",
     decisions: [
       {
         description:
