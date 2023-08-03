@@ -33,7 +33,7 @@ import { final } from "./levels/final.js";
  * }
  */
 
-export const firstSceneName = "start";
+export const firstSceneName = "final";
 
 export const scenes = {
   start,
