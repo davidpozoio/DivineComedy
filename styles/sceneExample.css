@@ -24,7 +24,7 @@ body{
 
 .heart{
     width: 50px;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-top: 30px;
     animation: throb 0.5s infinite alternate-reverse;
 }
@@ -74,12 +74,16 @@ body{
     background-color: #0c0e10b3;
     padding: 20px;
     border-radius: 20px;
+
+    font-size: 30px;
 }
 .description__text{
     margin-top: 10px;
     background-color: #0c0e10b3;
     padding: 20px;
     border-radius: 20px;
+
+    font-size: 24px;
 }
 
 .scene__img{
